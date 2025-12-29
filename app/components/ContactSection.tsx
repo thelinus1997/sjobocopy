@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function ContactSection() {
   return (
-    <section className="w-full py-16 bg-gray-50">
+    <section className="w-full py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 gap-12 items-center">
           {/* Left side - Static image */}

@@ -17,12 +17,12 @@ export default function HeroSection() {
       
       {/* Content on top of image (Z-axis) - positioned on the right */}
       <div className="absolute inset-0 flex items-center justify-end">
-        <div className="mr-16 max-w-md space-y-6 text-[#394287]">
-          <h2 className="text-4xl font-bold">Hello World</h2>
-          <p className="text-lg">Hello World</p>
-          <div className="flex flex-col gap-4">
-            <Button className="py-3">Button 1</Button>
-            <Button className="py-3">Button 2</Button>
+        <div className="mr-16 w-auto space-y-6 text-white animate-[fadeUp_0.8s_ease-out_0.2s_both]">
+          <h2 className="font-normal whitespace-nowrap" style={{ fontSize: '65px' }}>En plats för alla djurvänner</h2>
+          <h1 className="whitespace-nowrap" style={{ fontSize: '80px', fontWeight: 900 }}>Sjöbogården</h1>
+          <div className="flex flex-row gap-4">
+            <Button className="py-3">Om oss</Button>
+            <Button className="py-3">Webshop</Button>
           </div>
         </div>
       </div>

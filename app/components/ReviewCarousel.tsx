@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Button from './Button';
+import Image from 'next/image';
 
 export default function ReviewCarousel() {
   const [currentReview, setCurrentReview] = useState(0);
@@ -14,11 +14,11 @@ export default function ReviewCarousel() {
   ];
 
   return (
-    <div className="w-full py-16 bg-gray-50">
+    <div className="w-full py-16 bg-white">
       <div className="container mx-auto px-4">
         {/* Carousel */}
-        <div className="max-w-3xl mx-auto relative">
-          <div className="bg-white p-8 shadow-md text-center rounded-tl-sm rounded-tr-[3rem] rounded-bl-[3rem] rounded-br-sm relative">
+        <div className="w-full mx-auto relative">
+          <div className="bg-gray-50 p-24 shadow-md text-center relative" style={{ borderRadius: '59px 153px 45px 150px' }}>
             {/* Title inside carousel */}
             <h2 className="text-3xl font-bold mb-6 text-[#394287]">&gt; &quot; &lt; Recensioner</h2>
             
@@ -27,18 +27,29 @@ export default function ReviewCarousel() {
             <p className="text-[#394287]">- {reviews[currentReview].author}</p>
             
             {/* Arrow buttons inside carousel */}
-            <Button
+            <button
               onClick={() => setCurrentReview((prev) => (prev - 1 + reviews.length) % reviews.length)}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 p-0"
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full hover:bg-gray-100 transition-all duration-300 flex items-center justify-center shadow-md"
             >
-              ←
-            </Button>
-            <Button
+              <Image 
+                src="/right_arrow03.svg" 
+                alt="Previous" 
+                width={20} 
+                height={20}
+                className="rotate-180"
+              />
+            </button>
+            <button
               onClick={() => setCurrentReview((prev) => (prev + 1) % reviews.length)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 p-0"
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full hover:bg-gray-100 transition-all duration-300 flex items-center justify-center shadow-md"
             >
-              →
-            </Button>
+              <Image 
+                src="/right_arrow03.svg" 
+                alt="Next" 
+                width={20} 
+                height={20}
+              />
+            </button>
           </div>
         </div>
       </div>
